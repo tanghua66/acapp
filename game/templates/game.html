@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+	</head>
+	<body>
+	<!--<div style="color: aqua;">{{name}}</div>  这里的name参数是来自视图传递过来的字典中的值，直接调用 格式{{vaild}} 可以传入数据为obj,tuple,list,func,int,str调用方法就会有所变化,eg:obj.func
+		<h4/>{{dint}}<h4>
+		<h4/>{{dtuple}}<h4>
+		<h4/>{{dtuple.2}}<h4>
+		<h4/>{{dlist}}<h4>
+		<h4/>{{dlist.2}}<h4>   模板里面只能用.法调用变量
+		<h4/>{{dmap}}<h4>
+		#<h4/>{{dmap.name}}<h4>  标签语法  类似于
+		<h4/>{{dfunc.24}}<h4>
+		<h4/>{{dobj.name.hh.11}}<h4> -->
+		<form action="/game/playground/" method="post">
+			<input type="text" name="x" value="{{x}}">
+        <select name="op" id="">
+		<option value="add" {% if op == "add"%}selected{% endif %}>add</option>
+            <option value="sub" {% if op == "sub"%}selected{% endif %}>sub</option>
+            <option value="mul" {% if op == "mul"%}style="color: red;" selected{% endif %}>mul</option>
+            <option value="div" {% if op == "div"%}selected{% endif %}>div</option>
+        </select>
+	<input type="text" name="y" value="{{y}}">
+	<span>{{val}}</span>
+        <div><input type="submit" value="compute"></div>
+    </form>
+	</body>
+</html>

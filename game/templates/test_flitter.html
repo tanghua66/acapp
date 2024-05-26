@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="color: aqua;">{{name}}</div>  这里的name参数是来自视图传递过来的字典中的值，直接调用 格式{{vaild}} 可以传入数据为obj,tuple,list,func,int,str调用方法就会有所变化,eg:obj.func
+    <h4>{{dint|add:"5"}}</h4>
+    <h4>{{dtuple}}</h4>
+    <h4>{{dtuple.2}}</h4>
+    <h4>{{dlist}}</h4>
+    <h4>{{dlist.2}}</h4>  #‘|’作为过滤器可直接模板层中直接对值进行操作，不需要通过视图函数进行操作 
+    <h4>{{dmap}}</h4>
+    <h4>{{dmap.name|upper}}</h4>  
+    <h4>{{dfunc.24}}</h4>
+    <h4>{{dobj.name.hh.11}}</h4>
+    <h4>{{script}}</h4>  #django中默认对html代码进行转义，这个js代码会被当成字符串处理，而非html代码
+    <h4>{{script | safe}}</h4>
+    #safe表示对html代码不进行转义,这里的js代码会被正确执行
+</body>
+</html>
